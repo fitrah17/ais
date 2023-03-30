@@ -11,7 +11,7 @@ USER_NAME='username'
 USER_PASSWORD='password'
 
 #* setting time
-ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
+ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 hwclock --systohc
 
 #* generating locales and setting up the host information
