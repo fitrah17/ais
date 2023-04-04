@@ -32,7 +32,7 @@ wget --directory-prefix /etc/ https://raw.githubusercontent.com/Hibrit/archlinux
 pacman -Syy
 
 #* installing essential packages
-pacman -S --needed --noconfirm grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog mtools dosfstools base-devel linux-headers reflector openssh xdg-user-dirs tldr #os-prober ntfs-3g
+pacman -S --needed --noconfirm grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog mtools dosfstools base-devel linux-headers reflector openssh xdg-user-dirs tldr os-prober ntfs-3g xf86-video-amdgpu xorg xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
 
 #! install grub !!!THIS IS FOR UEFI USAGE ONLY!!!
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
@@ -44,6 +44,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 systemctl enable NetworkManager
+systemctl enable lightdm
 
 #* adding user
 useradd -mG wheel ${USER_NAME}
